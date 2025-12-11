@@ -1,0 +1,30 @@
+Play-
+
+brick=script.Parent
+other=brick.Parent.stop
+music=brick.Parent.music
+
+function onClicked()
+
+music:Play()
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+
+Stop-
+
+brick=script.Parent
+other=brick.Parent.play
+music=brick.Parent.music
+
+function onClicked()
+
+music:Stop()
+
+end
+
+script.Parent.ClickDetector.MouseClick:connect(onClicked)
+
+Use clickdetector for both!
