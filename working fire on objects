@@ -1,0 +1,45 @@
+if hit == nil then
+		return
+	end
+	if hit.Parent == nil then
+		return
+	end
+	if hit.Anchored == true and hit.Locked == true then
+		return end
+	if hit.Name == script.Parent.Name then 
+		return end
+
+	if hit.Name == "Engine" then 
+		return end	
+
+	hit.Anchored = false
+	hit.Name = script.Parent.Name
+	hit.Color = Color3.new()
+	
+	local fire = Instance.new("Fire")
+	fire.Parent = hit
+	fire.Heat = 0
+	fire.Size = 30
+
+	wait(math.random(5,10))
+	script:clone().Parent = hit
+
+	wait(math.random(5,10))
+
+	hit:BreakJoints()
+
+	hit.Color = Color3.new("")
+
+	wait(math.random(5,10))
+
+	hit.Velocity = Vector3.new(0, 100, 0)
+
+	hit.Size = hit.Size/Vector3.new(2,2,2)
+
+	wait(math.random(5,10))
+	
+	hit:remove()
+	
+end
+
+script.Parent.Touched:connect(OnTouched)
