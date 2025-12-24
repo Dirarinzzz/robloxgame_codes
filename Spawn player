@@ -1,0 +1,11 @@
+game.Players.PlayerAdded:Connect(function(Player) -- Player being added
+  Player.CharacterAdded:Connect(function(Character) -- Character being added
+    local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart") -- Awaits the humanoidrootpart to spawn instead of LowerTorso or Torso to avoid more lines of code.
+    local Part_Spawn = game.Workspace:FindFirstChild("PartNameHere") -- Search for the part to spawn at.
+    wait(1) --  Delay till we are sure of it.
+    
+    HumanoidRootPart.CFrame = Part_Spawn.CFrame -- Uses CFrame to get the Direction & the position.
+  end)
+end)
+
+-FROM DEVFORUM-!
